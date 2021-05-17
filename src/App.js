@@ -1,21 +1,14 @@
 import './App.css';
 import { useState } from 'react';
+import numbers from './Components/NumbersButton';
 
 function App() {
   /* eslint no-eval: 0 */
   const [data, setData] = useState('');
   const calcBtns = [];
 
-  // ARRAY DE NUMEROS DA CALCULADORA
-  [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, '.', '%'].forEach(item => {
-    calcBtns.push(
-      // PEGANDO OS VALOR DOS BOTÕES 
-      <button onClick={e => { setData(data + e.target.value) }} value={item} key={item}>
-        {/* COLOCANDO OS NUMEROS EM CADA BOTÃO */}
-        {item}
-      </button>
-    )
-  })
+  // Array de numeros
+  numbers(calcBtns, setData, data)
 
   // LOGICA PARA SOMAR, DIVIDIR, SUBTRAIR E MULTIPLICAR
   const handleLogic = () => {
@@ -37,9 +30,10 @@ function App() {
       {/* MOSTRAR O VALOR */}
       <div className='show-input'>{data}</div>
 
+      {/* DIV DOS BOTÕES NUMERAIS */}
       <div className='digits flex'>{calcBtns}</div>
-      <div className='modifiers subgrid'>
 
+      <div className='modifiers subgrid'>
         {/* BOTÃO PARA LIMPAR NUMERO POR NUMERO  */}
         <button onClick={() => setData(data.substr(0, data.length - 1))}>Limpar</button>
 
