@@ -10,7 +10,7 @@ Este projeto consiste em fazer conta basicas
 
 Foto do projeto
 
-![Foto do projeto](fotoCalc.PNG)
+![Foto do projeto](fotoCalc.png)
 
 Resultado final: https://wonderful-raman-bddbb0.netlify.app/
 
